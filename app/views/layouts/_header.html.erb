@@ -1,26 +1,58 @@
-<div class='navbar-fixed'>
-  <nav>
-    <div class='nav-wrapper' style='margin: 0 10px;'>
-      <%= link_to root_path, class: 'brand-logo' do %>
-        <div class='center-align'>Robert<b>Scott</b></div>
-      <% end %> 
-      <a data-activates='mobile-sidebar' class='button-collapse'><i class='mdi-navigation-menu'></i></a>
-      <ul id='nav-mobile' class='right hide-on-med-and-down'>
-        <li><%= link_to icon('youtube'),     'http://bit.ly/1Ll2sd7',   target: '_blank' %></li>
-        <li><%= link_to icon('google-plus'), 'http://bit.ly/1VIvk5Q',   target: '_blank' %></li>
-        <li><%= link_to icon('facebook'),    'http://on.fb.me/1MhBteP', target: '_blank' %></li>
-        <li><%= link_to icon('twitter'),     'http://bit.ly/1GzD3GW',   target: '_blank' %></li>
-        <li><%= link_to 'Contact',           new_message_path %></li>
-      </ul>
-      <ul class='side-nav dark-side-nav' id='mobile-sidebar'>
-        <li><%= link_to icon('times-circle', 'Close'),  'javascript:void(0)', class: 'close-mobie-sidebar' %></li>
-        <li><%= link_to icon('home', 'Home'),           root_path %></li>
-        <li><%= link_to icon('youtube', 'YouTube'),     'http://bit.ly/1Ll2sd7',   target: '_blank' %></li>
-        <li><%= link_to icon('google-plus', 'Google+'), 'http://bit.ly/1VIvk5Q',   target: '_blank' %></li>
-        <li><%= link_to icon('facebook', 'Facebook'),   'http://on.fb.me/1MhBteP', target: '_blank' %></li>
-        <li><%= link_to icon('twitter', 'Twitter'),     'http://bit.ly/1GzD3GW',   target: '_blank' %></li>
-        <li><%= link_to icon('envelope', 'Contact'),     new_message_path %></li>
-      </ul>
+<div class='ui inverted segment main-header'>
+  <div class='ui container'>
+    <div class='ui top inverted secondary pointing menu'>
+      <div class='item' style='padding:4px; margin-right:10px;'>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/6/6b/Indy_PopCon_Red_Square_Logo.png'>
+      </div>
+      <a class='header active item'>Melvin's Tournament</a>
+      <div class='right menu'>
+        <a class='item'>Schedule</a>
+        <a class='item'>Artist Alley</a>
+        <a class='toc item'><i class='sidebar icon'></i> Menu</a>
+        <div class='ui dropdown item'>
+          FAQ <i class='dropdown icon'></i>
+          <div class='menu'>
+            <a class='item'>About Us</a>
+            <a class='item'>Tournament Info</a>
+            <a class='item'>Hotel Info</a>
+          </div>
+        </div>
+        <div class='item'>
+          <a class='ui red button'>
+            <i class='user icon'></i> Register
+          </a>
+        </div>
+      </div>
     </div>
-  </nav>
+  </div>
 </div>
+
+<style>
+    .segment.main-header { 
+      border-radius: 0;
+      margin-bottom: 0px; 
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .right.menu .toc.item { display: none; }
+
+    @media only screen and (max-width: 700px) {
+      .main-header .secondary.menu .right.menu .item:not(.toc) {
+        display: none;
+      }
+      .main-header .secondary.menu .right.menu .item.toc {
+        display: block;
+      }
+    }
+
+    .main-header .secondary.menu .active.item {
+      border-color: #DB2828 !important;
+    }
+
+    .ui.logo.icon.image {
+      width: 35px;
+      margin-right: 1em;
+    }
+</style>

@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-RobertScott::Application.load_tasks
+Melvin::Application.load_tasks

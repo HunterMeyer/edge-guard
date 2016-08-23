@@ -1,71 +1,89 @@
-<div>
-  <div class='cover-image'>
-    <div class='center-align'>
-      <div class='cover-primary'>
-        <div id='cover-text-a'>Robert<b>Scott</b></div>
-        <div id='cover-text-b'>Entertaining Short Videos</div>
+<div class='ui masthead inverted center aligned segment'>
+  <div class='ui text container'>
+    <h1 class='ui inverted header'>Tournament 2016</h1>
+    <h2>Get your game on, you rascal!</h2>
+    <a class='ui huge red button'>
+      <i class='user icon'></i> Register Now
+    </a>
+  </div>
+</div>
+
+<div class="ui vertical stripe segment">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="eight wide column">
+        <h3 class="ui header">We Help Companies and Companions</h3>
+        <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
+        <h3 class="ui header">We Make Bananas That Can Dance</h3>
+        <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+      </div>
+      <div class="six wide right floated column">
+        <img src="assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
+      </div>
+    </div>
+    <div class="row">
+      <div class="center aligned column">
+        <a class="ui huge button">Check Them Out</a>
       </div>
     </div>
   </div>
 </div>
 
-<div class='container'>
-  <div class='row'>
-    <div class='col s12 m8 offset-m2 l6 offset-l3'>
-      <div class='card-panel grey lighten-5 z-depth-1'>
-        <div class='row valign-wrapper' style='margin-bottom: 0;'>
-          <div class='col s2'>
-            <%= image_tag 'https://lh3.googleusercontent.com/-ApmkKRriEl8/AAAAAAAAAAI/AAAAAAAAAAA/YPy3ezELuqc/s92-c-k-no/photo.jpg',
-              class: 'circle responsive-img' %>
-          </div>
-          <div class='col s10'>
-            <span class='black-text'>
-              Thanks for checking out our videos, hope you like them. We have more coming soon...
-              <div class='right-align grey-text'>- Robert<b>Scott</b></div>
-            </span>
-          </div>
-        </div>
+
+<div class="ui vertical stripe segment">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="eight wide column">
+        <h3 class="ui header">We Help Companies and Companions</h3>
+        <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
+        <h3 class="ui header">We Make Bananas That Can Dance</h3>
+        <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+      </div>
+      <div class="six wide right floated column">
+        <img src="assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
+      </div>
+    </div>
+    <div class="row">
+      <div class="center aligned column">
+        <a class="ui huge button">Check Them Out</a>
       </div>
     </div>
   </div>
-
-  <% @videos.in_groups_of(3, false) do |videos| %>
-    <div class='row'>
-      <% videos.each do |video| %>
-        <div class='col l4 m8 offset-m2 s12'>
-          <div class='card'>
-            <div class='card-image waves-effect waves-block waves-light'>
-              <%= image_tag video.thumb_url, class: 'activator' %>
-            </div>
-            <div class='card-content'>
-              <span class='card-title activator grey-text text-darken-4'>
-                <span class='truncate inline-block'><%= video.title %></span>
-                <i class='mdi-navigation-more-vert right'></i>
-              </span>
-            </div>
-            <div class='card-reveal'>
-              <span class='card-title grey-text text-darken-4'>
-                 <span class='truncate inline-block'><%= video.title %></span>
-                 <i class='mdi-navigation-close right'></i>
-              </span>
-              <%= link_to icon('youtube-play', 'Play'), '#video-modal', 
-                data: { video_id: video.video_id, video_title: video.title },
-                class: 'waves-effect waves-light btn red white-text modal-trigger' %>
-              <p>
-                <%= video.description %>
-              </p>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-
-  <div class='divider'></div>
-  <div class='row center-align' style='margin: 40px 0;'>
-    Rate, Comment, and <span class='inline-subscribe-button'><%= subscribe_button %></span>
-  </div>
-  <div class='divider'></div>
 </div>
 
-<%= render 'player_modal' %>
+<style>
+  .ui.segment.masthead { 
+    height: 500px;
+    margin-top: 0px;
+    border-radius: 0;
+    background: #525252;
+    background-image: url(http://gamersforgiving.org/files/2014/10/859280_10152112420131117_48583533_o.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .masthead h1.ui.header {
+    margin-top: 2em;
+    margin-bottom: 0;
+    font-size: 4em;
+    font-weight: normal;
+  }
+
+  .masthead h2 {
+    margin-bottom: 1em;
+    font-weight: normal;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .ui.segment.masthead { height: 400px; }
+    .masthead h1.ui.header {
+      font-size: 2em;
+      margin-top: 4em;
+    }
+    .masthead h2 {
+      font-size: 1.5em;
+      margin-top: .5em;
+    }
+  }
+</style>

@@ -1,5 +1,4 @@
-RobertScott::Application.routes.draw do
-  resources  :messages
+Melvin::Application.routes.draw do
 
   root 'home#index'
 

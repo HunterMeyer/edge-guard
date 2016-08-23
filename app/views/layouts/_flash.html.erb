@@ -1,7 +1,0 @@
-<% flash.each do |key, value| %>
-  <% unless value.blank? || value.length < 2 %>
-    <div class='alert alert-<%= key %> alert-dismissible z-depth-1' role='alert'>
-      <div><%= value %></div>
-    </div>
-  <% end %>
-<% end %>

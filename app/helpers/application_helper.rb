@@ -1,6 +1,6 @@
 module ApplicationHelper
   def full_title(page_title)
-    (page_title.presence || 'Entertaining Short Videos') + ' | RobertScott'
+    (page_title.presence || '2016 Gaming Tournament') + ' | Melvin'
   end
 
   def markdown(text)
@@ -16,30 +16,5 @@ module ApplicationHelper
         errors.full_messages.map { |message| content_tag(:li, message) }.join.html_safe
       end
     end
-  end
-
-  def video_url(video_id)
-    "https://www.youtube.com/watch?v=#{video_id}"
-  end
-
-  def subscribe_url
-    'https://www.youtube.com/channel/UC34xp0_WvobosrCJeBTlmYg?sub_confirmation=1'
-  end
-
-  def subscribe_button(text = 'Subscribe')
-    link_to icon('youtube-play', "#{text}"), subscribe_url, 
-    class: 'waves-effect waves-light btn red white-text', target: '_blank'
-  end
-
-  def icon(icon, text = nil, html_options = {})
-    text, html_options = nil, text if text.is_a?(Hash)
-
-    content_class = "fa fa-#{icon}"
-    content_class << " #{html_options[:class]}" if html_options.key?(:class)
-    html_options[:class] = content_class
-
-    html = content_tag(:i, nil, html_options)
-    html << ' ' << text.to_s unless text.blank?
-    html
   end
 end

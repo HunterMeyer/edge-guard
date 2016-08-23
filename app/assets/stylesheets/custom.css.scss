@@ -1,39 +1,25 @@
 /* Mix-ins
 ========================================================================== */
-@import 'materialize/components/color';
-$primary-color: color('red', 'darken-4') !default;
-@import 'materialize';
-@import 'font-awesome';
+@import 'semantic-ui';
 
 
 /* Variables
 ========================================================================== */
-$Red:          #F44336;
-$Green:        #47AC65;
-$BgGrey:       #E0E0E0;
-$DividerGrey:  #EAEAEA;
+/*$Red:          #F44336;*/
+/*$Green:        #47AC65;*/
+/*$BgGrey:       #E0E0E0;*/
+/*$DividerGrey:  #EAEAEA;*/
 
 
 /* Universal
 ========================================================================== */
 html, body { height: 100%; color: #525252; }
-body { background-color: $BgGrey; }
+/*body { background-color: $BgGrey; }*/
 a:hover, a:focus, a:active { text-decoration: none; color: inherit; }
-main { margin-top: 30px; }
 i.right { margin-left: 5px; margin-right: -10px; }
 .btn { margin-bottom: 0px; }
 .inline-subscribe-button a { margin: 0 5px -10px 5px; }
 
-
-/* Video Modal
-========================================================================== */
-.modal { max-height: 100%; }
-.modal .modal-content { padding: 0; }
-.modal .modal-links { padding: 4px 5px; margin: 1px 0 -5px 0; }
-.modal .modal-links a { margin-bottom: 0; }
-
-.play-sm { display: none; }
-@media(max-width: 360px) { .play-sm { display: inline-block; } .play-lg { display: none; } }
 
 /* Helper Classes
 ========================================================================== */
@@ -50,134 +36,11 @@ i.right { margin-left: 5px; margin-right: -10px; }
 /* Form Errors */
 .error                               { margin-top: -8px; }
 #error_explanation > h2              { margin-bottom: 2px; }
-.error, #error_explanation > h2      { color: $Red; font-weight: bold; font-size: 18px; } 
+/*.error, #error_explanation > h2      { color: $Red; font-weight: bold; font-size: 18px; } */
 .error > ul, #error_explanation > ul { list-style-position: inside; padding-left: 2px; li { font-weight: normal; font-size: 14px; color: #6C6C6C; } }
-
-.input-field label { color: #525252; }
-
-.input-field textarea.materialize-textarea:focus + label,
-.input-field input[type=text]:focus + label,
-.input-field input[type=email]:focus + label,
-.input-field input[type=password]:focus + label { color: $Red; }
-
-.input-field textarea.materialize-textarea:focus,
-.input-field input[type=text]:focus,
-.input-field input[type=email]:focus,
-.input-field input[type=password]:focus { border-bottom: 1px solid $Red; box-shadow: 0 1px 0 0 $Red; }
-.input-field .prefix { color: #525252; }
-.input-field .prefix.active { color: $Red; }
-
-select { background: #FFF; border: solid 1px #DADADA; }
-select:hover, select:focus, select:active { cursor: pointer; border: 1px solid #BEBEBE; outline: none; }
-
-
-/* Navigation Bar
-========================================================================== */
-.navbar-fixed nav, ul.side-nav.dark-side-nav { background: #333333; }
-#nav-mobile li { height: 64px; }
-#mobile-sidebar li a { width: 100%; }
-
-ul.side-nav.dark-side-nav {
-  > li a {
-    color: $BgGrey;
-    &:hover { color: #444; }
-  }
-  > li > a > i {
-    margin-right: 3px;
-    font-size: 14px;
-    @extend .red-text, .text-darken-2
-  }
-}
-
-
-/* Alerts
-========================================================================== */
-.alert {
-  position: fixed;
-  right: 12px;
-  top: 80px;
-  background: #FFF;
-  font-weight: bold;
-}
-
-.alert div { padding: 8px 20px; }
-.alert-success { color: $Green; }
-.alert-error   { color: $Red; }
-
-
-/* Homepage Banner
-========================================================================== */
-.cover-image { 
-  padding: 40px 0 20px 0;
-  margin-bottom: 20px;
-  margin-top: -30px; 
-  color: #FFF;
-  background-color: #525252;
-  background-image: url(https://lh6.googleusercontent.com/-1TOAPgta6o8/VOfNTxhHcHI/AAAAAAAAAB0/X5tAvYVbOr0/w1326-h1324-no/IMG_9811.JPG);
-  background-position: center center;
-  background-repeat: no-repeat; 
-  background-attachment: fixed; 
-  background-size: cover;
-}
-.cover-primary { margin-bottom: 20px; }
-.cover-button  { margin: 20px 0 10px 0; }
-#cover-text-a { font-size: 90px; line-height: 100px; letter-spacing: 8px; }
-/*#cover-text-b { font-size: 124px; line-height: 120px; }*/
-
-@media(max-width: 550px) {
-  #cover-text-a { font-size: 80px;  line-height: 100px; letter-spacing: 5px; }
-  /*#cover-text-b { font-size: 112px; line-height: 120px; }*/
-}
-@media(max-width: 500px) {
-  #cover-text-a { font-size: 60px;  line-height: 70px; letter-spacing: 3px; }
-  /*#cover-text-b { font-size: 92px;  line-height: 100px; }*/
-}
-@media(max-width: 425px) {
-  #cover-text-a { font-size: 50px;  line-height: 70px; letter-spacing: 3px; }
-  /*#cover-text-b { font-size: 84px;  line-height: 100px; }*/
-}
-@media(max-width: 400px) {
-  #cover-text-a { font-size: 45px;  line-height: 40px; letter-spacing: 5px; }
-  /*#cover-text-b { font-size: 70px;  line-height: 110px; }*/
-}
-
-
-/* Homepage Tabs
-========================================================================== */
-@media(max-width: 500px) {
-  .tog-tab { display: none; }
-  .tog-tab ~ .hidden { display: inline-block; font-size: 20px; }
-}
-
-.card .card-content .card-title { line-height: 26px; }
-.card-button { margin: 10px 0 -10px 0; }
-.card a { margin-right: 0 }
-
-.card-title span { font-size: 18px; }
-.card .truncate {
-  width: 220px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-@media(max-width: 1330px) { .card .truncate { width: 180px; } }
-@media(max-width: 1150px) { .card .truncate { width: 150px; } }
-@media(max-width: 1130px) { .card .truncate { width: 140px; } }
-@media(max-width: 992px)  { .card .truncate { width: 400px; } }
-@media(max-width: 890px)  { .card .truncate { width: 350px; } }
-@media(max-width: 790px)  { .card .truncate { width: 300px; } }
-@media(max-width: 700px)  { .card .truncate { width: 250px; } }
-@media(max-width: 615px)  { .card .truncate { width: 200px; } }
-@media(max-width: 600px)  { .card .truncate { width: 380px; } }
-@media(max-width: 540px)  { .card .truncate { width: 330px; } }
-@media(max-width: 480px)  { .card .truncate { width: 280px; } }
-@media(max-width: 430px)  { .card .truncate { width: 250px; } }
-@media(max-width: 400px)  { .card .truncate { width: 200px; } }
 
 
 /* Footer
 ========================================================================== */
 footer.page-footer { background: none; }
 footer.page-footer .footer-copyright { background-color: #575757; }
-
