@@ -5,21 +5,24 @@
 
 /* Variables
 ========================================================================== */
-/*$Red:          #F44336;*/
-/*$Green:        #47AC65;*/
-/*$BgGrey:       #E0E0E0;*/
-/*$DividerGrey:  #EAEAEA;*/
-
 
 /* Universal
 ========================================================================== */
 html, body { height: 100%; color: #525252; }
 /*body { background-color: $BgGrey; }*/
-a:hover, a:focus, a:active { text-decoration: none; color: inherit; }
-i.right { margin-left: 5px; margin-right: -10px; }
-.btn { margin-bottom: 0px; }
-.inline-subscribe-button a { margin: 0 5px -10px 5px; }
 
+
+.ui.segment.masthead {
+  height: 500px;
+  margin-top: 0px;
+  border-radius: 0;
+  background: #525252;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(cta_background_red_blur.jpg);
+  background-attachment: fixed;
+}
 
 /* Helper Classes
 ========================================================================== */
@@ -27,20 +30,3 @@ i.right { margin-left: 5px; margin-right: -10px; }
 .block        { display: block; }
 .inline-block { display: inline-block; }
 .pointer      { cursor: pointer; }
-
-
-/* All Forms
-========================================================================== */
-.back-button    { margin-bottom: 8px; }
-.cancel-button  { margin-left: 5px; }
-/* Form Errors */
-.error                               { margin-top: -8px; }
-#error_explanation > h2              { margin-bottom: 2px; }
-/*.error, #error_explanation > h2      { color: $Red; font-weight: bold; font-size: 18px; } */
-.error > ul, #error_explanation > ul { list-style-position: inside; padding-left: 2px; li { font-weight: normal; font-size: 14px; color: #6C6C6C; } }
-
-
-/* Footer
-========================================================================== */
-footer.page-footer { background: none; }
-footer.page-footer .footer-copyright { background-color: #575757; }
