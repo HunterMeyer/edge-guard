@@ -2,41 +2,13 @@
 
 <br><br>
 <div class='ui top aligned stackable grid container'>
-  <div class='ten wide computer sixteen wide mobile column'>
-    <div class='ui red segment'>
-      <h3 class='ui header'>2016 Tournament Game List</h3>
-      <div class='ui top aligned  grid container'>
-        <% @games.each do |game| %>
-          <div class='four wide computer three wide tablet five wide mobile column centered' style='text-align: center; margin-bottom:8px;'>
-            <div class='icon-wrapper'>
-              <div class='ui middle aligned small image'>
-                <%= image_tag game.image_url %>
-              </div>
-            </div>
-            <div class='ui bottom attached label game-title'><%= game.title %></div>
-          </div>
-        <% end %>
-      </div>
-      <h3 class='ui red centered header'>Plus Many More...</h3>
-    </div>
-  </div>
+  <%= render 'game_list' %>
   <div class='six wide computer sixteen wide mobile column'>
     <div class='ui red segment'>
       <h3 class='ui header'>Location Info</h3>
     </div>
   </div>
 </div>
-
-<style>
-.game-title.label { background: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-.icon-wrapper { height:144px; }
-@media only screen and (max-width: 700px) {
-  .icon-wrapper { height: 60px }
-  .ui.small.image { width: 60px; }
-}
-
-</style>
 
 <br><br>
 
