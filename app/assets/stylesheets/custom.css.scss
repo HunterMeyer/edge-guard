@@ -1,15 +1,10 @@
-/* Mix-ins
-========================================================================== */
-@import 'semantic-ui';
-
-
 /* Variables
 ========================================================================== */
 
 /* Universal
 ========================================================================== */
 html, body { height: 100%; color: #525252; }
-/*body { background-color: $BgGrey; }*/
+body.pushable > .pusher { background-color: #545454; }
 
 
 .ui.segment.masthead {
@@ -22,6 +17,10 @@ html, body { height: 100%; color: #525252; }
   background-size: cover;
   background-image: url(cta_background_red_blur.jpg);
   background-attachment: fixed;
+}
+
+.inverted.segment.red-accent {
+  border-top: 2px solid #DB2828
 }
 
 /* Helper Classes
