@@ -2,11 +2,11 @@
 
 <br><br>
 <div class='ui top aligned stackable grid container'>
-  <%= render 'game_list' %>
+  <div class='ten wide computer sixteen wide mobile column'>
+    <%= render 'game_list' %>
+  </div>
   <div class='six wide computer sixteen wide mobile column'>
-    <div class='ui inverted segment red-accent'>
-      <h3 class='ui header'>Location Info</h3>
-    </div>
+    <%= render 'location_info' %>
   </div>
 </div>
 

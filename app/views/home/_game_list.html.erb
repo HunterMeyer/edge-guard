@@ -1,18 +1,16 @@
-<div class='ten wide computer sixteen wide mobile column'>
-  <div class='ui inverted segment red-accent'>
-    <h3 class='ui header'>2016 Tournament Game List</h3>
-    <div class='ui centered grid'>
-      <% @games.each do |game| %>
-        <div class='four wide computer four wide tablet five wide mobile column'>
-          <div class='image-wrapper'>
-            <%= image_tag game.image_url, class: 'ui small image' %>
-          </div>
-          <div class='image-label'><%= game.title %></div>
+<div class='ui inverted segment red-accent'>
+  <h3 class='ui header'>2016 Tournament Game List</h3>
+  <div class='ui centered grid'>
+    <% @games.each do |game| %>
+      <div class='four wide computer four wide tablet five wide mobile column'>
+        <div class='image-wrapper'>
+          <%= image_tag game.image_url, class: 'ui small image' %>
         </div>
-      <% end %>
-    </div>
-    <h3 class='ui red centered header'>Plus Many More...</h3>
+        <div class='image-label'><%= game.title %></div>
+      </div>
+    <% end %>
   </div>
+  <h3 class='ui gray centered header'>Plus Many More...</h3>
 </div>
 
 <style>
