@@ -1,14 +1,30 @@
 <%= render 'layouts/cta_full' %>
 
-<br><br>
-<div class='ui top aligned stackable grid container'>
-  <div class='ten wide computer sixteen wide mobile column'>
-    <%= render 'game_list' %>
-  </div>
-  <div class='six wide computer sixteen wide mobile column'>
-    <%= render 'location_info' %>
+<div class='ui vertical segment'>
+  <div class='ui top aligned stackable grid container'>
+    <div class='ten wide computer sixteen wide mobile column'>
+      <%= render 'game_list' %>
+    </div>
+    <div class='six wide computer sixteen wide mobile column'>
+      <%= render 'location_info' %>
+    </div>
   </div>
 </div>
+
+<style>
+  .ui.masthead + .ui.vertical.segment {
+    background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+    /*background-image: url("https://www.transparenttextures.com/patterns/random-grey-variations.png");*/
+    padding-top: 60px;
+    background-attachment: fixed;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .ui.masthead + .ui.vertical.segment {
+      padding-top: 70px;
+    }
+  }
+</style>
 
 <br><br>
 
