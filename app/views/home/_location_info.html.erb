@@ -5,20 +5,20 @@
   </div>
 
   <div class='ui active tab inverted segment' data-tab='first'>
-    <div>
-      <%= image_tag 'https://cache.carlsonhotels.com/ow-cms/rad/images/hotels/UTSALTLK/NewPILOT/SLCU_Overview_Exterior_630x310.jpg', class: 'ui rounded fluid image' %>
-    </div>
+    <%= link_to hotel_url, target: '_blank' do %>
+      <%= image_tag hotel_image_url, class: 'ui rounded fluid image' %>
+    <% end %>
     <div class='ui list'>
       <div class='item'>
-        <div class='ui large inverted red header content'>This Really Cool Hotel</div>
+        <div class='ui large inverted red header content'>Hilton Daytona Beach</div>
       </div>
       <div class='item'>
         <i class='ui red inverted marker icon'></i>
-        <div class='content'>123 Some Cool Rd. Great Town, FL 32222</div>
+        <div class='content'>100 N Atlantic Ave, Daytona Beach, FL 32118</div>
       </div>
       <div class='ui item'>
         <i class='ui red inverted call icon'></i>
-        <div class='content'>321-555-1234</div>
+        <div class='content'>386-254-8200</div>
       </div>
       <div class='item'>
         <div class='content'>
@@ -55,8 +55,8 @@
         </div>
       </div>
       <div class='ui item action-items right-aligned'>
-        <%= link_to '#', class: 'ui inverted red button' do %>
-          <i class='info circle icon'></i> More Info
+        <%= link_to 'http://www.oceancenter.com/', class: 'ui inverted red button', target: '_blank' do %>
+          <i class='external icon'></i> More Info
         <% end %>
       </div>
     </div>

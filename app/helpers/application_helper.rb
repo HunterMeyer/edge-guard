@@ -17,11 +17,21 @@ module ApplicationHelper
   end
 
   def maps_image_url
-    options = { zoom: 11, size: '666x375', markers: venue_address }
+    options = { zoom: 9, size: '675x359', markers: venue_address }
     "https://maps.googleapis.com/maps/api/staticmap?#{options.to_query}"
   end
 
   def maps_url
     "https://www.google.com/maps/place/#{venue_address}"
+  end
+
+  def hotel_url
+    'http://www3.hilton.com/en/hotels/florida/'\
+      'hilton-daytona-beach-resort-ocean-walk-village-DABDHHF/index.html'
+  end
+
+  def hotel_image_url
+    'http://www3.hilton.com/resources/media/hi/DABDHHF/en_US/img/shared/'\
+      'full_page_image_gallery/main/HH_exteriorsky_675x359_FitToBoxSmallDimension_Center.jpg'
   end
 end
