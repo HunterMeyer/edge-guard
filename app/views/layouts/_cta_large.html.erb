@@ -74,3 +74,10 @@
     </div>
   </div>
 </div>
+
+<% content_for :below_the_fold do %>
+  <script>
+    var deadline = new Date('December 10, 2016');
+    initializeClock('countdown-div', deadline);
+  </script>
+<% end %>
