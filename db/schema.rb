@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817230735) do
+ActiveRecord::Schema.define(version: 20160827041525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "subscribers", force: true do |t|
+    t.text    "type"
+    t.text    "first_name"
+    t.text    "last_name"
+    t.text    "email"
+    t.text    "phone"
+    t.text    "region"
+    t.text    "country"
+    t.text    "gamer_tag"
+    t.text    "gamer_prefix"
+    t.text    "sponsors_name"
+    t.text    "payment_status"
+    t.text    "customer_token"
+    t.boolean "sponsored"
+  end
+
+  add_index "subscribers", ["customer_token"], name: "index_subscribers_on_customer_token", using: :btree
+  add_index "subscribers", ["type"], name: "index_subscribers_on_type", using: :btree
 
   create_table "users", force: true do |t|
     t.text     "first_name"
