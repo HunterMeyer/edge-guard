@@ -2,7 +2,9 @@ Melvin::Application.routes.draw do
   root 'home#index'
   get :register, to: 'home#register'
 
-  resources :players, only: [:new, :create]
-  resources :spectators, only: [:new, :create]
-  resources :volunteers, only: [:new, :create]
+  [:players, :spectators, :volunteers].each do |type|
+    resources type, only: [:new, :create], controller: :subscribers, type: type do
+      get :checkout, on: :member
+    end
+  end
 end
