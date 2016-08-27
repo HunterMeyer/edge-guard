@@ -1,0 +1,79 @@
+<div class='ui vertical segment non-masthead'>
+  <div class='ui inverted red-accent text container segment'>
+    <h2 class='ui header'>I want to Register as a...</h2>
+    <div class='ui grid centered link cards'>
+      <div class='five wide computer five wide tablet eight wide mobile column'>
+        <%= link_to new_player_path, class: 'ui fluid card' do %>
+          <div class='image'>
+            <%= image_tag 'http://semantic-ui.com/images/avatar2/large/matthew.png' %>
+          </div>
+          <div class='content'>
+            <div class='header'>Player</div>
+            <div class='meta tablet only'>I'm here to compete</div>
+          </div>
+        <% end %>
+      </div>
+      <div class='five wide computer five wide tablet eight wide mobile column'>
+        <%= link_to new_spectator_path, class: 'ui fluid card' do %>
+          <div class='image'>
+            <%= image_tag 'http://semantic-ui.com/images/avatar2/large/molly.png' %>
+          </div>
+          <div class='content'>
+            <div class='header'>Spectator</div>
+            <div class='meta tablet only'>I'm here to watch</div>
+          </div>
+        <% end %>
+      </div>
+      <div class='five wide computer five wide tablet eight wide mobile column'>
+        <%= link_to new_volunteer_path, class: 'ui fluid card' do %>
+          <div class='image'>
+            <%= image_tag 'http://semantic-ui.com/images/avatar2/large/elyse.png' %>
+          </div>
+          <div class='content'>
+            <div class='header'>Volunteer</div>
+            <div class='meta tablet only'>I'm here to help</div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<style>
+  .ui.non-masthead.vertical.segment {
+    background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+    padding-top: 150px;
+    background-attachment: fixed;
+    padding-bottom: 150px;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .ui.non-masthead.vertical.segment {
+      padding-top: 120px;
+    }
+  }
+
+  .ui.grid.centered.link.cards {
+    padding-top: 5px;
+    padding-bottom: 20px;
+  }
+
+  .ui.fluid.card {
+    background: #db2828;
+    box-shadow: 0px 1px 3px 0px #000000, 0px 0px 0px 1px #8c0808;
+  }
+
+  .ui.fluid.card:hover .content .header {
+    color: #db2828;
+  }
+
+  .ui.fluid.card .content .header {
+    color: #f7f7f7;
+  }
+
+  .ui.fluid.card .content .meta {
+    color: #6f0303;
+  }
+</style>
