@@ -1,9 +1,9 @@
 <div class='ui vertical inverted sidebar menu pointing right'>
   <div class='item'>
-    <a class='ui logo icon image'>
+    <%= link_to root_path, class: 'ui logo icon image' do %>
       <img src='https://upload.wikimedia.org/wikipedia/commons/6/6b/Indy_PopCon_Red_Square_Logo.png'>
-    </a>
-    <a><b>Melvin's Tournament</b></a>
+    <% end %>
+    <%= link_to content_tag(:b, 'Melvin\'s Tournament'), root_path %>
   </div>
   <a class='item'>Schedule</a>
   <a class='item'>Artist Alley</a>
@@ -16,8 +16,8 @@
     </div>
   </div>
   <div class='item'>
-    <a class='fluid ui red button'>
+    <%= link_to register_path, class: 'fluid ui red button' do %>
       <i class='user icon'></i> Register
-    </a>
+    <% end %>
   </div>
 </div>

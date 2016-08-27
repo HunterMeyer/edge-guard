@@ -4,7 +4,7 @@
       <div class='item' style='padding:4px; margin-right:10px;'>
         <img src='https://upload.wikimedia.org/wikipedia/commons/6/6b/Indy_PopCon_Red_Square_Logo.png'>
       </div>
-      <a class='header active item'>Melvin's Tournament</a>
+      <%= link_to 'Melvin\'s Tournament', root_path, class: 'header active item' %>
       <div class='right menu'>
         <a class='item'>Schedule</a>
         <a class='item'>Artist Alley</a>
@@ -18,9 +18,9 @@
           </div>
         </div>
         <div class='item'>
-          <a class='ui red button'>
+          <%= link_to register_path, class: 'ui red button' do %>
             <i class='user icon'></i> Register
-          </a>
+          <% end %>
         </div>
       </div>
     </div>
