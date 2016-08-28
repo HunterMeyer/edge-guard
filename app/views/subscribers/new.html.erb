@@ -1,7 +1,7 @@
 <div class='ui vertical segment non-masthead'>
   <div class='ui inverted red-accent text container segment'>
     <h2 class='ui header'>Tell us about you...</h2>
-    <%= form_for @subscriber, html: { class: 'ui form' } do |f| %>
+    <%= form_for @subscriber, html: { class: 'ui inverted form' } do |f| %>
       <div class='field'>
         <label class='ui red'>Name</label>
         <div class='two fields'>
@@ -140,5 +140,21 @@
 
   .ui.right-aligned {
     text-align: right;
+  }
+
+  .ui.inverted.form .field label.ui.red {
+    color: #DB2828 !important;;
+  }
+
+  .ui.toggle.checkbox input ~ .box:before, .ui.toggle.checkbox input ~ label:before {
+    background-color: #525252 !important;
+  }
+
+  .ui.toggle.checkbox input:checked ~ .box:before, .ui.toggle.checkbox input:checked ~ label:before {
+    background-color: #DB2828 !important;
+  }
+
+  .ui.toggle.checkbox input:checked ~ .box, .ui.toggle.checkbox input:checked ~ label {
+    color: #DB2828 !important;
   }
 </style>
