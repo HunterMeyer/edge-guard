@@ -17,7 +17,8 @@ module Payment
 
     def save_with_payment
       if valid?
-        customer = Stripe::Customer.create(description: type, email: email, plan: 'monthly', card: card_token)
+        customer = Stripe::Customer.create(description: type, email: email, card: card_token)
+        charge   = Stripe::Charge.create(customer: customer.id, amount: '5000', description: 'Melvin Tournament', currency: 'usd')
         self.customer_token = customer.id
         self.payment_status = 'Processing'
         save!

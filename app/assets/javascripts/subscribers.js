@@ -19,11 +19,16 @@ subscription = {
       expMonth: $('#card_month').val(),
       expYear: $('#card_year').val()
     };
+    $('#card_number').val('');
+    $('#card_code').val('');
+    $('#card_month').val('');
+    $('#card_year').val('');
     return Stripe.createToken(card, subscription.handleStripeResponse);
   },
   handleStripeResponse: function(status, response) {
     if (status === 200) {
-      $('#card_token').val(response.id);
+      type = $('#subscriber_type').val();
+      $('#' + type + '_card_token').val(response.id);
       return $('.subscriber-form').submit();
     } else {
       $('#stripe-error label').text(response.error.message);
