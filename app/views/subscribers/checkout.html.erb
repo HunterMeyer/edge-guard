@@ -1,1 +1,88 @@
-checkout.html.erb
+<div class='ui vertical segment non-masthead'>
+  <div class='ui inverted red-accent text container segment'>
+    <h2 class='ui header'>Secure Checkout...</h2>
+    <%= form_for @subscriber, html: { class: 'ui inverted form subscriber-form' } do |f| %>
+      <%= f.hidden_field :customer_token %>
+      <%= hidden_field_tag :subscriber_type, @subscriber.type.downcase %>
+      <% if @subscriber.customer_token.present? %>
+        <div class='field'>
+          <label class='ui red'>Credit card has been provided.</label>
+        </div>
+      <% else %>
+        <div class='field'>
+          <div class='fields'>
+            <div class='ten wide field'>
+              <label class='ui red'>Card Number <small>(All major cards accepted)</small></label>
+              <%= text_field_tag :card_number, nil, placeholder: 'Card Number' %>
+            </div>
+            <div class='six wide field'>
+              <label class='ui red'>CVC</label>
+              <%= text_field_tag :card_code, nil, placeholder: 'Code on Back of Card' %>
+            </div>
+          </div>
+        </div>
+        <div class='field'>
+          <label class='ui red'>Expiration Date</label>
+          <div class='two fields'>
+            <div class='field'>
+              <%= select_month nil, { add_month_numbers: true, prompt: 'Select Month' }, { id: 'card_month', class: 'ui fluid dropdown' } %>
+            </div>
+            <div class='field'>
+              <%= select_year nil, { start_year: Date.today.year, end_year: Date.today.year+15, prompt: 'Select Year' }, { id: 'card_year', class: 'ui fluid dropdown' } %>
+            </div>
+          </div>
+        </div>
+        <div class='ui right-aligned'>
+          <div class='ui red button' id='process-card'>
+            <i class='check circle icon'></i> Submit Payment
+          </div>
+        </div>
+      <% end %>
+      <div class='field' id='stripe-error'>
+        <h3>
+          <label class='ui red'>
+            <noscript>JavaScript is not enabled and is required for this form. Please enable it in your web browser settings.</noscript>
+          </label>
+        </h3>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= stripe_javascript_tag %>
+
+<style>
+  .ui.non-masthead.vertical.segment {
+    background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+    padding-top: 150px;
+    background-attachment: fixed;
+    padding-bottom: 300px;
+  }
+
+  .ui.non-masthead.vertical.segment .ui.inverted.red-accent.text.container.segment {
+    max-width: 600px !important;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .ui.non-masthead.vertical.segment {
+      padding-top: 120px;
+    }
+  }
+
+  .ui.right-aligned {
+    text-align: right;
+  }
+
+  .ui.inverted.form input[type='text'], .ui.selection.dropdown {
+    background-color: #525252;
+    color: #FFF;
+  }
+
+  .ui.inverted.form .field label.ui.red {
+    color: #DB2828 !important;
+  }
+
+  .ui.inverted.form .field label.ui.red small {
+    color: #A2A2A2 !important;
+  }
+</style>
