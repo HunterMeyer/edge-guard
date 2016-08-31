@@ -4,11 +4,10 @@ module ApplicationHelper
   end
 
   def generate_form_errors(errors)
-    content_tag(:div, class: 'error') do
-      'Oops. Something went wrong:'.html_safe +
-      content_tag(:ul) do
-        errors.full_messages.map { |message| content_tag(:li, message) }.join.html_safe
-      end
+    return unless errors.present?
+    content_tag(:div, class: 'ui error message') do
+      content_tag(:div, 'Oops. Something went wrong:', class: 'header') +
+      errors.full_messages.map { |message| content_tag(:div, message) }.join.html_safe
     end
   end
 

@@ -19,10 +19,8 @@ body.pushable > .pusher { background-color: #545454; }
   box-shadow: 0px 2px 3px 1px #2f2f2f;
 }
 
-.inverted.segment.red-accent {
-  border-top: 2px solid #DB2828;
-  /*background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");*/
-}
+.inverted.segment.red-accent { border-top: 2px solid #DB2828; }
+.ui.error.message { background-color: #FFB6B6; }
 
 /* Helper Classes
 ========================================================================== */
@@ -30,3 +28,7 @@ body.pushable > .pusher { background-color: #545454; }
 .block        { display: block; }
 .inline-block { display: inline-block; }
 .pointer      { cursor: pointer; }
+
+
+
+

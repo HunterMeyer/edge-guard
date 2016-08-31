@@ -27,8 +27,8 @@ class SubscribersController < ApplicationController
   end
 
   def subscriber_params
-    params.require(params[:type]).permit(:first_name, :last_name, :email, :phone,
-      :sponsors_name, :gamer_tag, :gamer_prefix, :region, :country, :sponsored
+    params.require(subscriber_type.to_s.downcase).permit(:first_name, :last_name, :email,
+      :phone, :sponsors_name, :gamer_tag, :gamer_prefix, :region, :country, :sponsored
     )
   end
 

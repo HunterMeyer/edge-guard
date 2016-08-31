@@ -1,9 +1,10 @@
 <div class='ui vertical segment non-masthead'>
   <div class='ui inverted red-accent text container segment'>
     <h2 class='ui header'>Tell us about you...</h2>
+    <%= generate_form_errors(@subscriber.errors) %>
     <%= form_for @subscriber, html: { class: 'ui inverted form' } do |f| %>
       <div class='field'>
-        <label class='ui red'>Name</label>
+        <label class='ui red'>Name <small>(required)</small></label>
         <div class='two fields'>
           <div class='field'>
             <%= f.text_field :first_name, placeholder: 'First Name' %>
@@ -16,7 +17,7 @@
       <div class='field'>
         <div class='two fields'>
           <div class='field'>
-            <label class='ui red'>Email</label>
+            <label class='ui red'>Email <small>(required)</small></label>
             <%= f.text_field :email, placeholder: 'email@example.com' %>
           </div>
           <div class='field'>
@@ -103,7 +104,11 @@
   }
 
   .ui.inverted.form .field label.ui.red {
-    color: #DB2828 !important;;
+    color: #DB2828 !important;
+  }
+
+  .ui.inverted.form .field label.ui.red small {
+    color: #A2A2A2 !important;
   }
 
   .ui.toggle.checkbox input ~ .box:before, .ui.toggle.checkbox input ~ label:before {
