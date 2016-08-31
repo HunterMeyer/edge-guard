@@ -45,6 +45,8 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    domain_name (0.5.20160615)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.2.2)
     faraday (0.9.2)
@@ -76,6 +78,8 @@ GEM
       activesupport (>= 3.2.13)
       rack (>= 1.4.5)
     hike (1.2.3)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
     httpclient (2.8.2.2)
     hurley (0.2)
     i18n (0.7.0)
@@ -98,6 +102,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.12.1)
     multipart-post (2.0.0)
+    netrc (0.11.0)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -136,6 +141,10 @@ GEM
       uber (~> 0.0.7)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     retriable (2.1.0)
     sass (3.4.22)
     sass-rails (5.0.3)
@@ -159,6 +168,13 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    stripe (1.9.9)
+      mime-types (~> 1.25)
+      multi_json (>= 1.0.4, < 2)
+      rest-client (~> 1.4)
+    stripe-rails (0.3.1)
+      rails (>= 3)
+      stripe
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -170,6 +186,9 @@ GEM
     uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -190,4 +209,6 @@ DEPENDENCIES
   sass
   sass-rails (~> 5.0)
   semantic-ui-sass!
+  stripe (= 1.9.9)
+  stripe-rails
   uglifier
