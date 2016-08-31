@@ -1,4 +1,5 @@
 Melvin::Application.routes.draw do
+  # devise_for :subscribers, controllers: { registrations: 'subscribers', sessions: 'sessions' }
   root 'home#index'
   get :register, to: 'home#register'
 

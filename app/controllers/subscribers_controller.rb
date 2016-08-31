@@ -14,7 +14,7 @@ class SubscribersController < ApplicationController
 
   def update
     @subscriber = subscriber_type.find(params[:id])
-    if @subscriber.update(subscriber_params)
+    if @subscriber.update(subscriber_params) && @subscriber.save_with_payment
       redirect_to send("thankyou_#{@subscriber.type.downcase}_path", @subscriber.id)
     else
       render :checkout
@@ -37,7 +37,7 @@ class SubscribersController < ApplicationController
 
   def subscriber_params
     params.require(subscriber_type.to_s.downcase).permit(:first_name, :last_name, :email, :phone,
-      :sponsors_name, :gamer_tag, :gamer_prefix, :region, :country, :sponsored, :customer_token
+      :sponsors_name, :gamer_tag, :gamer_prefix, :region, :country, :sponsored, :card_token
     )
   end
 

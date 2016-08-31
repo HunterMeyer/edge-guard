@@ -23,8 +23,7 @@ subscription = {
   },
   handleStripeResponse: function(status, response) {
     if (status === 200) {
-      type = $('#subscriber_type').val();
-      $('#' + type + '_customer_token').val(response.id);
+      $('#card_token').val(response.id);
       return $('.subscriber-form').submit();
     } else {
       $('#stripe-error label').text(response.error.message);

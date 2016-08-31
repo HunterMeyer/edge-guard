@@ -2,9 +2,8 @@
   <div class='ui inverted red-accent text container segment'>
     <h2 class='ui header'>Secure Checkout...</h2>
     <%= form_for @subscriber, html: { class: 'ui inverted form subscriber-form' } do |f| %>
-      <%= f.hidden_field :customer_token %>
-      <%= hidden_field_tag :subscriber_type, @subscriber.type.downcase %>
-      <% if @subscriber.customer_token.present? %>
+      <%= f.hidden_field :card_token %>
+      <% if @subscriber.card_token.present? %>
         <div class='field'>
           <label class='ui red'>Credit card has been provided.</label>
         </div>
