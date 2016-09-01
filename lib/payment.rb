@@ -24,10 +24,10 @@ module Payment
         self.payment_status = 'Processing'
         save!
       end
-    rescue Stripe::InvalidRequestError => e
+    rescue Stripe::InvalidRequestError, Stripe::CardError => e
       self.card_token = nil
       logger.error "Stripe error while creating subscriber #{self.id}: #{e.message}"
-      errors.add :base, 'There was a problem with your credit card.'
+      errors.add :base, e.message
       false
     end
   end

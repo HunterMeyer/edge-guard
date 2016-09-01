@@ -19,10 +19,8 @@ subscription = {
       expMonth: $('#card_month').val(),
       expYear: $('#card_year').val()
     };
-    $('#card_number').val('');
-    $('#card_code').val('');
-    $('#card_month').val('');
-    $('#card_year').val('');
+    $("input[type='text']").val('');
+    $('.dropdown').dropdown('restore defaults');
     return Stripe.createToken(card, subscription.handleStripeResponse);
   },
   handleStripeResponse: function(status, response) {
