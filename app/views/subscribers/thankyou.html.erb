@@ -1,1 +1,51 @@
-thankyou.html.erb
+<div class='ui vertical segment non-masthead'>
+  <div class='ui inverted red-accent text container segment'>
+    <h2 class='ui header'>Thank you...</h2>
+    <p>
+      Congratulations <%= @subscriber.first_name %>! You've successfully registered for the event.<br>
+      You will receive an email receipt shortly.
+    </p>
+    <p class='ui text red'>
+      Don't forget, the tournament starts December 11th, 2016.
+    </p>
+    <p>
+      Redirecting you to the <%= link_to 'homepage', root_path %> in <span class='num-seconds ui red text'>10</span> seconds...
+    </p>
+  </div>
+</div>
+
+<style>
+  .ui.non-masthead.vertical.segment {
+    background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+    padding-top: 150px;
+    background-attachment: fixed;
+    padding-bottom: 300px;
+  }
+
+  .ui.non-masthead.vertical.segment .ui.inverted.red-accent.text.container.segment {
+    max-width: 600px !important;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .ui.non-masthead.vertical.segment {
+      padding-top: 120px;
+    }
+  }
+
+  .ui.text.red {
+    color: #DB2828;
+  }
+</style>
+
+<script>
+  var counter = $('.num-seconds');
+  var remaining = counter.text();
+  setInterval(function() {
+    remaining--;
+    if (remaining == 0) {
+      window.location.pathname = '/';
+    } else if (remaining >= 0) {
+      counter.text(remaining);
+    }
+  }, 1000);
+</script>
