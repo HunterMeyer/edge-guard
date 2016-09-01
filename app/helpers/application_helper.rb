@@ -33,4 +33,10 @@ module ApplicationHelper
     'http://www3.hilton.com/resources/media/hi/DABDHHF/en_US/img/shared/'\
       'full_page_image_gallery/main/HH_exteriorsky_675x359_FitToBoxSmallDimension_Center.jpg'
   end
+
+  def payment_call_to_action(subscriber)
+    discount_end = subscriber.discount_end_date
+    return if discount_end.past?
+    "Act fast! On #{discount_end.strftime('%b %d')} the fee goes up to $#{subscriber.full_fee}"
+  end
 end
