@@ -3,6 +3,7 @@ module Payment
 
   included do
     include Stripe::Callbacks
+    include InstanceMethods
 
     after_charge_failed! do |data|
       user = Subscriber.find_by_customer_token(data.customer)
@@ -18,7 +19,7 @@ module Payment
     def save_with_payment
       if valid?
         customer = Stripe::Customer.create(description: type, email: email, card: card_token)
-        charge   = Stripe::Charge.create(customer: customer.id, amount: charge_amount, description: 'Melvin Tournament', currency: 'usd')
+        charge   = Stripe::Charge.create(customer: customer.id, amount: fee * 100, description: 'Melvin Tournament', currency: 'usd')
         self.customer_token = customer.id
         self.payment_status = 'Processing'
         save!
@@ -28,6 +29,16 @@ module Payment
       logger.error "Stripe error while creating subscriber #{self.id}: #{e.message}"
       errors.add :base, 'There was a problem with your credit card.'
       false
+    end
+  end
+
+  module InstanceMethods
+    def discount_end_date
+      @discount_end_date ||= DateTime.parse('2016-11-10')
+    end
+
+    def fee
+      discount_end_date.future? ? discount_fee : full_fee
     end
   end
 end

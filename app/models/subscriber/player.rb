@@ -1,5 +1,11 @@
 class Player < Subscriber
-  def charge_amount
-    DateTime.parse('2016-11-10').future? ? '3000' : '3500'
+  include Payment
+
+  def discount_fee
+    30
+  end
+
+  def full_fee
+    35
   end
 end
