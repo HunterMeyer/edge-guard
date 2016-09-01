@@ -35,7 +35,7 @@ module Melvin
     cert_path = Gem.loaded_specs['google-api-client'].full_gem_path + '/lib/cacerts.pem'
     ENV['SSL_CERT_FILE'] = cert_path
 
-    config.stripe.api_key = 'sk_test_tMhzQ5wbk3c9TyJLSn5MedYs'
+    config.stripe.secret_key = config.stripe.api_key = 'sk_test_tMhzQ5wbk3c9TyJLSn5MedYs'
     config.stripe.publishable_key = 'pk_test_plu4WIh7uHQCsHeNNT0mHHgl'
   end
 end
