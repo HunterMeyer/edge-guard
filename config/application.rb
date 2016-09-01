@@ -35,7 +35,17 @@ module Melvin
     cert_path = Gem.loaded_specs['google-api-client'].full_gem_path + '/lib/cacerts.pem'
     ENV['SSL_CERT_FILE'] = cert_path
 
-    config.stripe.secret_key = config.stripe.api_key = 'sk_test_tMhzQ5wbk3c9TyJLSn5MedYs'
+    config.stripe.secret_key      = 'sk_test_tMhzQ5wbk3c9TyJLSn5MedYs'
     config.stripe.publishable_key = 'pk_test_plu4WIh7uHQCsHeNNT0mHHgl'
+
+    google_drive_config_path = "#{config.root}/config/google_drive_config.json"
+    unless File.file?(google_drive_config_path)
+      google_drive_config = {
+        project_id: 'melvins-tournament',
+        private_key: ENV['MELVIN_DRIVE_PKEY'].gsub("\\n", "\n"),
+        client_email: ENV['MELVIN_DRIVE_CLIENT_EMAIL']
+      }
+      File.open(google_drive_config_path, 'w') { |f| f.write(google_drive_config.to_json) }
+    end
   end
 end
