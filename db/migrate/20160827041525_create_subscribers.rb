@@ -16,6 +16,8 @@ class CreateSubscribers < ActiveRecord::Migration
       t.boolean :sponsored
     end
 
+    execute('ALTER SEQUENCE subscribers_id_seq RESTART WITH 65012')
+
     add_index :subscribers, :type
     add_index :subscribers, :customer_token
   end
