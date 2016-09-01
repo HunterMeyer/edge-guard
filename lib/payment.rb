@@ -24,6 +24,7 @@ module Payment
         save!
       end
     rescue Stripe::InvalidRequestError => e
+      self.card_token = nil
       logger.error "Stripe error while creating subscriber #{self.id}: #{e.message}"
       errors.add :base, 'There was a problem with your credit card.'
       false
