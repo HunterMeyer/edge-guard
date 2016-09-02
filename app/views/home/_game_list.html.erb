@@ -1,45 +1,9 @@
 <div class='ui inverted segment red-accent'>
-  <h3 class='ui header'>2016 Tournament Game List</h3>
-  <div class='ui centered grid'>
-    <% @games.each do |game| %>
-      <div class='four wide computer four wide tablet five wide mobile column'>
-        <div class='image-wrapper'>
-          <%= image_tag game.image_url, class: 'ui small image' %>
-        </div>
-        <div class='image-label'><%= game.title %></div>
-      </div>
-    <% end %>
-  </div>
-  <h3 class='ui gray centered header'>Plus Many More...</h3>
+  <h3 class='ui centered header'>...This Year's Tournament Game...</h3>
+  <h2 class='ui inverted red centered header'>Super Smash Bros. Melee on GameCube!</h2>
+  <%= image_tag 'https://s3.amazonaws.com/edge-guard/images/super_smash_bros_melee.png', class: 'ui fluid image rounded' %>
 </div>
 
 <style>
-  .image-wrapper {
-    height: 140px;
-    text-align: center;
-    font: 0/0 a;
-  }
-
-  .image-wrapper:before {
-    content: ' ';
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-  }
-
-  .image-wrapper img.ui.image {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  .image-label {
-    color: #FF695E;
-    font-size: 0.85em;
-  }
-
-  @media only screen and (max-width: 500px) { 
-    .image-wrapper {
-      height: 100px;
-    }
-  }
+  h3.ui.header + h2.ui.header { margin: -7px 0px 13px 0px; }
 </style>
