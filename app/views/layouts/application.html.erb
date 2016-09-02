@@ -2,7 +2,6 @@
 <html lang='en' prefix='og: http://ogp.me/ns# website: http://ogp.me/ns/website#'>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-    <%= favicon_link_tag '#' %>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
     <%= content_for :head %>
@@ -18,7 +17,7 @@
       <%= yield %>
     </div>
 
-    <%= render 'layouts/google_analytics' %>
+    <% render 'layouts/google_analytics' %>
     <%= yield :below_the_fold %>
   </body>
 </html>
