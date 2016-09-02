@@ -8,7 +8,7 @@
 /.bundle
 
 # Ignore Mac files
-/.DS_Store
+.DS_Store
 /.keep
 
 # Ignore all logfiles and tempfiles.
