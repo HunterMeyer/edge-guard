@@ -3,4 +3,5 @@ $(document).ready(function() {
   $('.ui.dropdown').dropdown();
   $('.tabular.menu .item').tab();
   $('.ui.checkbox').checkbox();
+  $('.ui.accordion').accordion();
 });
