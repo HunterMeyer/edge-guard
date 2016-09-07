@@ -1,6 +1,6 @@
 module ApplicationHelper
   def full_title(page_title)
-    (page_title.presence || '2016 Gaming Tournament') + ' | Melvin'
+    'EDGE GUARD 2016 | ' + page_title
   end
 
   def generate_form_errors(errors)
