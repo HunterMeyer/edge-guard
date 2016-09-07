@@ -16,4 +16,11 @@ module ApplicationHelper
     return if discount_end.past?
     "Act fast! On #{discount_end.strftime('%b %d')} the fee goes up to $#{subscriber.full_fee}"
   end
+
+  def formatted(text)
+    matches = /(http\S*)/.match(text)
+    return text unless matches
+    matches.captures.each { |url| text.gsub!(url, link_to(url, url, target: '_blank')) }
+    text.html_safe
+  end
 end
