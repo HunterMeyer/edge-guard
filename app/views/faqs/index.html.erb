@@ -1,6 +1,6 @@
 <%= render 'layouts/cta_large' %>
 
-<div class='ui vertical segment'>
+<div class='ui vertical segment bg-bricked'>
   <div class='ui inverted red-accent text container segment'>
     <h2 class='ui header'>Frequently Asked Questions</h2>
     <div class='ui fluid inverted accordion'>
@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<div class='ui vertical segment'>
+<div class='ui vertical segment bg-bricked'>
   <div class='ui centered aligned stackable grid container'>
     <div class='six wide computer sixteen wide tablet column'>
       <a name='hotel'></a>
@@ -38,9 +38,10 @@
 
 
 <style>
-  .ui.masthead + .ui.vertical.segment {
+  .ui.masthead + .ui.vertical.segment { padding-top: 60px; border-bottom: none; }
+
+  .ui.segment.bg-bricked {
     background-image: url('https://s3.amazonaws.com/edge-guard/images/brick-wall-dark.png');
-    padding-top: 60px;
     background-attachment: fixed;
   }
 
