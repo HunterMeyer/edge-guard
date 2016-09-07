@@ -1,0 +1,77 @@
+<%= render 'layouts/cta_large' %>
+
+<div class='ui vertical segment'>
+  <div class='ui inverted red-accent text container segment'>
+    <h2 class='ui header'>Frequently Asked Questions</h2>
+    <div class='ui fluid inverted accordion'>
+      <% @faq.each do |faq| %>
+        <div class='title'>
+          <i class='ui red dropdown icon'></i> <%= faq.question %>
+        </div>
+        <div class='content'>
+          <p><%= formatted(faq.answer) %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class='ui vertical segment'>
+  <div class='ui centered aligned stackable grid container'>
+    <div class='six wide computer sixteen wide tablet column'>
+      <a name='hotel'></a>
+      <div class='ui left aligned inverted segment red-accent'>
+        <h2 class='ui header'>Hotel Information</h2>
+        <%= render 'shared/hotel_details' %>
+      </div>
+    </div>
+    
+    <div class='six wide computer sixteen wide tablet column'>
+      <a name='venue'></a>
+      <div class='ui left aligned inverted segment red-accent'>
+        <h2 class='ui header'>Venue Information</h2>
+        <%= render 'shared/venue_details' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  .ui.masthead + .ui.vertical.segment {
+    background-image: url('https://s3.amazonaws.com/edge-guard/images/brick-wall-dark.png');
+    padding-top: 60px;
+    background-attachment: fixed;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .ui.masthead + .ui.vertical.segment {
+      padding-top: 70px;
+    }
+  }
+
+  .ui.inverted.accordion div.title {
+    color: #C7C7C7 !important;
+  }
+
+  .ui.list .item.header {
+    font-size: 1.5em;
+  }
+
+  .ui.item.action-items {
+    margin-top: 10px;
+  }
+  .ui.action-items.right-aligned {
+    text-align: right;
+  }
+
+  .ui.tab.inverted.segment {
+    margin-bottom: 0px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    .ui.large.inverted.red.header.content {
+      font-size: 1.5em;
+    }
+  }
+</style>
