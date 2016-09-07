@@ -1,0 +1,51 @@
+<% provide(:title, 'Subscribers') %>
+
+<div class='ui vertical segment bg-bricked'>
+  <div class='ui centered aligned stackable grid container'>
+    <div class='twelve wide column'>
+      <div class='ui left aligned inverted segment red-accent'>
+        <h2 class='ui header'>Subscribers</h2>
+        <table class='ui inverted selectable celled striped table'>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Registered</th>
+              <th>Payment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @subscribers.each do |type, people| %>
+              <tr>
+                <td colspan='4'><div class='ui red ribbon label'><%= type %></div></td>
+              </tr>
+              <% people.each do |person| %>
+                <tr>
+                  <td><%= person.full_name %></td>
+                  <td><%= person.email %></td>
+                  <td><%= person.created_at.strftime('%b %d @ %H:%M') %></td>
+                  <td><%= person.payment_status %></td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .ui.segment.bg-bricked {
+    padding-top: 120px;
+    min-height: 600px; 
+    background-image: url('https://s3.amazonaws.com/edge-guard/images/brick-wall-dark.png');
+    background-attachment: fixed;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .ui.masthead + .ui.vertical.segment {
+      padding-top: 70px;
+    }
+  }
+</style>
