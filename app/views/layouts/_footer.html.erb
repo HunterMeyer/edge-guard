@@ -1,0 +1,28 @@
+<div class='ui-footer-push'></div>
+<div class='ui vertical center aligned segment ui-footer'>
+  <h4>Follow EDGE GUARD</h4>
+  <div class='footer-wrapper'>
+    <%= link_to '#', target: '_blank' do %>
+      <i class='facebook square icon'></i>
+    <% end %>
+    <%= link_to '#', target: '_blank' do %>
+      <i class='twitter icon'></i>
+    <% end %>
+    <%= link_to '#', target: '_blank' do %>
+      <i class='youtube icon'></i>
+    <% end %>
+  </div>
+</div>
+
+<style>
+  .ui-footer-push {
+    height: 50px;
+    background-image: url('https://s3.amazonaws.com/edge-guard/images/brick-wall-dark.png');
+    background-attachment: fixed;
+  }
+  .ui.segment.ui-footer { box-shadow: inset 0px 1px 3px 1px #2F2F2F; }
+  .ui.ui-footer h4 { margin-top: 20px; color: #C4C4C4; }
+  .ui.ui-footer .footer-wrapper { margin: 20px 0; }
+  .ui.ui-footer .footer-wrapper a { color: #FFF; font-size: 3em; }
+  .ui.ui-footer .footer-wrapper a:hover { color: #DB2828; }
+</style>

@@ -6,6 +6,8 @@
 html, body { height: 100%; color: #525252; }
 body.pushable > .pusher { background-color: #545454; }
 
+.ui.vertical.segment { border-bottom: none; }
+
 .ui.segment.masthead {
   height: 500px;
   margin-top: 0px;
