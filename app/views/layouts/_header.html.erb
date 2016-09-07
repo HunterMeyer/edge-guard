@@ -12,9 +12,9 @@
         <div class='ui dropdown item'>
           FAQ <i class='dropdown icon'></i>
           <div class='menu'>
-            <a class='item'>About Us</a>
-            <a class='item'>Tournament Info</a>
-            <a class='item'>Hotel Info</a>
+            <%= link_to 'All', faq_path, class: 'item' %>
+            <%= link_to 'Hotel Info', faq_path + '#hotel', class: 'item' %>
+            <%= link_to 'Venue Info', faq_path + '#venue', class: 'item' %>
           </div>
         </div>
         <div class='item'>
