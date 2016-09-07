@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Melvin::Application.load_tasks
+EdgeGuard::Application.load_tasks

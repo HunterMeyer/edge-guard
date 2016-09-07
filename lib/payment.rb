@@ -19,7 +19,7 @@ module Payment
     def save_with_payment
       if valid?
         customer = Stripe::Customer.create(description: type, email: email, card: card_token)
-        charge   = Stripe::Charge.create(customer: customer.id, amount: fee * 100, description: 'Melvin Tournament', currency: 'usd')
+        charge   = Stripe::Charge.create(charge_details(customer.id))
         self.customer_token = customer.id
         self.payment_status = 'Processing'
         save!
@@ -29,6 +29,15 @@ module Payment
       logger.error "Stripe error while creating subscriber #{self.id}: #{e.message}"
       errors.add :base, e.message
       false
+    end
+
+    def charge_details(customer_id)
+      {
+        customer: customer_id,
+        amount: fee * 100,
+        description: 'EDGE GUARD 2016',
+        currency: 'usd'
+      }
     end
   end
 

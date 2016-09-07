@@ -9,7 +9,7 @@ require 'sprockets/railtie'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-module Melvin
+module EdgeGuard
   class Application < Rails::Application
     require 'extensions/ruby_extensions'
     # Settings in config/environments/* take precedence over those specified here.

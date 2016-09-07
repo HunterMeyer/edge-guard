@@ -1,4 +1,4 @@
-Melvin::Application.routes.draw do
+EdgeGuard::Application.routes.draw do
   root 'home#index'
   get :register,    to: 'home#register'
   get :faq,         to: 'faqs#index'
