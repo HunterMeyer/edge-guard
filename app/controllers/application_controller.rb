@@ -16,6 +16,12 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def authenticate
+    authenticate_or_request_with_http_basic do |user, pass|
+      user == ENV['MELVIN_USER'] && pass == ENV['MELVIN_PASS']
+    end
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:email, :password, :password_confirmation) }
     devise_parameter_sanitizer.for(:account_update) { |u|
