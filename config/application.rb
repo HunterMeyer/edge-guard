@@ -1,3 +1,4 @@
+# figaro heroku:set -e production
 require File.expand_path('../boot', __FILE__)
 
 require 'active_record/railtie'
