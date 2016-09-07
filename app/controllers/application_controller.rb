@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate
     authenticate_or_request_with_http_basic do |user, pass|
-      user == ENV['MELVIN_USER'] && pass == ENV['MELVIN_PASS']
+      user == ENV['BASIC_AUTH_USER'] && pass == ENV['BASIC_AUTH_PASS']
     end
   end
 end

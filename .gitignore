@@ -17,3 +17,6 @@
 
 # Ignore Drive config
 /config/google_drive_config.json
+
+# Ignore application configuration
+/config/application.yml
