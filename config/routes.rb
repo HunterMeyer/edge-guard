@@ -3,6 +3,7 @@ Melvin::Application.routes.draw do
   root 'home#index'
   get :register, to: 'home#register'
   get :faq,      to: 'faqs#index'
+  get :schedule, to: 'schedules#index'
 
   [:players, :spectators, :volunteers].each do |type|
     resources type, only: [:new, :create, :update], controller: :subscribers, type: type do
