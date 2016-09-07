@@ -14,6 +14,7 @@ class CreateSubscribers < ActiveRecord::Migration
       t.text :payment_status
       t.text :customer_token
       t.boolean :sponsored
+      t.timestamps
     end
 
     execute('ALTER SEQUENCE subscribers_id_seq RESTART WITH 65012')
