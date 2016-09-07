@@ -1,0 +1,50 @@
+<% provide(:title, 'Schedule') %>
+
+<%= render 'layouts/cta_large' %>
+
+<div class='ui vertical segment bg-bricked'>
+  <div class='ui centered aligned stackable grid container'>
+    <div class='twelve wide column'>
+      <div class='ui left aligned inverted segment red-accent'>
+        <h2 class='ui header'>Tournament Schedule</h2>
+        <p>All pools will be playing Super Smash Bros. Melee on Nintendo GameCube. <em>Remember to bring your own controller</em>.</p>
+        <table class='ui inverted unstackable celled striped table'>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Pool</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @schedule.each do |day, blocks| %>
+              <tr>
+                <td colspan='2'><div class='ui red ribbon label'><%= day %></div></td>
+              </tr>
+              <% blocks.each do |block| %>
+                <tr>
+                  <td><%= block.time %></td>
+                  <td><%= block.pool %></td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .ui.masthead + .ui.vertical.segment { padding-top: 60px; border-bottom: none; }
+
+  .ui.segment.bg-bricked {
+    background-image: url('https://s3.amazonaws.com/edge-guard/images/brick-wall-dark.png');
+    background-attachment: fixed;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .ui.masthead + .ui.vertical.segment {
+      padding-top: 70px;
+    }
+  }
+</style>
