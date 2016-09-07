@@ -5,61 +5,10 @@
   </div>
 
   <div class='ui active tab inverted segment' data-tab='first'>
-    <%= link_to 'http://www3.hilton.com/en/hotels/florida/hilton-daytona-beach-resort-ocean-walk-village-DABDHHF/index.html', target: '_blank' do %>
-      <%= image_tag 'https://s3.amazonaws.com/edge-guard/images/hilton_daytona.jpg', class: 'ui rounded fluid image' %>
-    <% end %>
-    <div class='ui list'>
-      <div class='item'>
-        <div class='ui large inverted red header content'>Hilton Daytona Beach</div>
-      </div>
-      <div class='item'>
-        <i class='ui red inverted marker icon'></i>
-        <div class='content'>100 N Atlantic Ave, Daytona Beach, FL 32118</div>
-      </div>
-      <div class='ui item'>
-        <i class='ui red inverted call icon'></i>
-        <div class='content'>386-254-8200</div>
-      </div>
-      <div class='item'>
-        <div class='content'>
-          Some text here about how you get a really good deal on rooms if you order before some date,
-          Yadda yadda, what a great hotel.
-        </div>
-      </div>
-      <div class='ui item action-items right-aligned'>
-        <%= link_to '#', class: 'ui inverted red button', target: '_blank' do %>
-          <i class='external icon'></i> Book Now
-        <% end %>
-      </div>
-    </div>
+    <%= render 'shared/hotel_details' %>
   </div>
   <div class='ui tab inverted segment' data-tab='second'>
-    <%= link_to 'https://www.google.com/maps/place/100+N+Atlantic+Ave+Daytona+Beach+FL+32118', target: '_blank' do %>
-      <%= image_tag 'https://s3.amazonaws.com/edge-guard/images/ocean_center_map.png', class: 'ui rounded fluid image' %>
-    <% end %>
-    <div class='ui list'>
-      <div class='item'>
-        <div class='ui large inverted red header content'>Daytona Beach Ocean Center</div>
-      </div>
-      <div class='item'>
-        <i class='ui red inverted marker icon'></i>
-        <div class='content'>100 N Atlantic Ave, Daytona Beach, FL 32118</div>
-      </div>
-      <div class='ui item'>
-        <i class='ui red inverted calendar icon'></i>
-        <div class='content'>December 10-11, 2016</div>
-      </div>
-      <div class='item'>
-        <div class='content'>
-          The venue features free wi-fi, cables, lockers, whatever you need.
-        </div>
-      </div>
-      <div class='ui item action-items right-aligned'>
-        <%= link_to 'http://www.oceancenter.com/', class: 'ui inverted red button', target: '_blank' do %>
-          <i class='external icon'></i> More Info
-        <% end %>
-      </div>
-    </div>
+    <%= render 'shared/venue_details' %>
   </div>
 </div>
 
