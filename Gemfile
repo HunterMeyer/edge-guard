@@ -13,6 +13,7 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'google_drive'
 gem 'stripe', '1.9.9'
 gem 'stripe-rails'
+gem 'figaro'
 
 group :production do
   gem 'rails_12factor'
