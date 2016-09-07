@@ -8,4 +8,12 @@ class Player < Subscriber
   def full_fee
     35
   end
+
+  def details
+    "#{gamer_tag} - #{gamer_prefix} | #{sponsored_tag}"
+  end
+
+  def sponsored_tag
+    sponsored ? "Sponsored by #{sponsors_name}" : 'Not Sponsored'
+  end
 end

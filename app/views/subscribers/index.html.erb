@@ -8,7 +8,7 @@
         <table class='ui inverted selectable celled striped table'>
           <thead>
             <tr>
-              <th>Name</th>
+              <th>Name (Details)</th>
               <th>Email</th>
               <th>Registered</th>
               <th>Payment</th>
@@ -21,7 +21,13 @@
               </tr>
               <% people.each do |person| %>
                 <tr>
-                  <td><%= person.full_name %></td>
+                  <td>
+                    <%= person.full_name %><br>
+                    <small>
+                      <%= person.location %><br>
+                      <%= person.details %>
+                    </small>
+                  </td>
                   <td><%= person.email %></td>
                   <td><%= person.created_at.strftime('%b %d @ %H:%M') %></td>
                   <td><%= person.payment_status %></td>

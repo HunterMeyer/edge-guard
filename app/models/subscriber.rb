@@ -5,4 +5,11 @@ class Subscriber < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def location
+    "#{region}, #{country}"
+  end
+
+  def details
+  end
 end
