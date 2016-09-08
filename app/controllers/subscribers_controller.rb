@@ -1,10 +1,4 @@
 class SubscribersController < ApplicationController
-  before_action :authenticate, only: [:index]
-
-  def index
-    @subscribers = Subscriber.all.group_by(&:type)
-  end
-
   def new
     @subscriber = subscriber_type.new
   end
